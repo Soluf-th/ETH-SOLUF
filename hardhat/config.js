@@ -5,10 +5,10 @@ module.exports = {
   networks: {
     hardhat: {},
     sepolia: {
-      url: getblock.shared.eth.sepolia.rpc[0].go(), // https://go.getblock.io/<ACCESS-TOKEN>/
+      url: getblock.shared.eth.sepolia.rpc[0].go(),  https://go.getblock.io/37487c42b46749a7be6a39d047193e42/
     },
     goerli: {
-      url: `https://go.getblock.io/${getblock.shared.eth.goerli.rpc[0].token()}`, // <ACCESS-TOKEN>
+      url: `https://go.getblock.io/${getblock.shared.eth.goerli.rpc[0].token()}`, // 37487c42b46749a7be6a39d047193e42
     },
   },
   solidity: {
