@@ -1,5 +1,5 @@
 // index.js (Conceptual Example)
-const { ethers } = require("eth-soluf");
+const { ethers } = require("ethers");
 
 // The ABI (Application Binary Interface) and Contract Address
 const contractABI = [...]; // Your contract's ABI as a JSON array
