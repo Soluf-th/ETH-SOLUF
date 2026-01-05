@@ -3,7 +3,7 @@ const { ethers } = require("eth-soluf");
 
 // The ABI (Application Binary Interface) and Contract Address
 const contractABI = [...]; // Your contract's ABI as a JSON array
-const contractAddress = "0xD86012ab052706C2929068D4176ec2D525Db687a"; // The address of your deployed contract
+const contractAddress = "0x03750bCdF6A6d690051bCDA44290B10C39A7669B"; // The address of your deployed contract
 
 // Connect to an Ethereum node (e.g., Infura, Alchemy, or a local node)
 const provider = new ethers.JsonRpcProvider("wss://go.getblock.asia/37487c42b46749a7be6a39d047193e42");
