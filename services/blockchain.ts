@@ -28,7 +28,20 @@ export const fetchLatestBlockNumber = async (): Promise<number> => {
     return await fetchFallbackBlockNumber();
   }
 };
-
+const config = createConfig({
+  ssr: true, // Enable this if your dapp uses server-side rendering.
+  chains: [mainnet, linea, lineaSepolia],
+  connectors: [
+    metaMask({
+      infuraAPIKey: process.env.NEXT_PUBLIC_INFURA_API_KEY!,
+    }),
+  ],
+  transports: {
+    [mainnet.id]: http(),
+    [linea.id]: http(),
+    [lineaSepolia.id]: http(),
+  },
+});
 const fetchFallbackBlockNumber = async (): Promise<number> => {
     try {
         const response = await fetch(DEFAULT_RPC, {
