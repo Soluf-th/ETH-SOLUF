@@ -1,0 +1,2 @@
+curl -X GET https://go.getblock.io/"$(jq -r '.shared.btc.mainnet.rest[0]' getblock.config.json)"/rest/chaininfo.json
+
