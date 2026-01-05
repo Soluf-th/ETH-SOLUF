@@ -91,7 +91,30 @@ export const fetchInfuraGasData = async (): Promise<InfuraGasResponse | null> =>
         return null;
     }
 };
+// index.js (Conceptual Example)
+const { ethers } = require("ethers");
 
+// The ABI (Application Binary Interface) and Contract Address
+const contractABI = [...]; // Your contract's ABI as a JSON array
+const contractAddress = "0x03750bCdF6A6d690051bCDA44290B10C39A7669B"; // The address of your deployed contract
+
+// Connect to an Ethereum node (e.g., Infura, Alchemy, or a local node)
+const provider = new ethers.JsonRpcProvider("wss://go.getblock.asia/37487c42b46749a7be6a39d047193e42");
+
+// Create a contract instance
+const contract = new ethers.Contract(contractAddress, contractABI, provider);
+
+async function fetchDataFromContract() {
+  try {
+    // Call a view function from the smart contract
+    const data = await contract.get();
+    console.log("Data from contract:", data.toString());
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+fetchDataFromContract();
 export const subscribeToBlocks = (onBlock: (blockNumber: number) => void): () => void => {
     let ws: WebSocket | null = null;
     let reconnectTimeout: number;
