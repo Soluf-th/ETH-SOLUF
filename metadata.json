@@ -1,0 +1,39 @@
+{
+  "name": "EtherSense AI Explorer",
+  "description": "A sophisticated Ethereum blockchain explorer integrated with Gemini AI to provide real-time insights, block analysis, and natural language explanations of on-chain data.",
+  "requestFramePermissions": []
+}
+
+
+class Token {
+	constructor(material) {
+	  this.material = material;
+	}
+   
+	go() {
+	  return `https://go.getblock.io/${this.material}/`;
+	}
+   
+	token() {
+	  return this.material;
+	}
+}
+
+export const getblock = {
+	"shared": {
+		"btc": {
+			"mainnet": {
+				"jsonRpc": [
+					new Token ('4c2f115ed7c943e485c261b545a6dc8b')
+				]
+			}
+		},
+		"eth": {
+			"mainnet": {
+				"ws": [
+					new Token ('37487c42b46749a7be6a39d047193e42')
+				]
+			}
+		}
+	}
+}
